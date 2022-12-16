@@ -30,4 +30,8 @@ public class PrestadorService {
     public void deletarPrestador(Long id) {
         this.prestadoresRepository.deleteById(id);
     }
+
+    public List<Prestador> listarPrestadoresPorNome(String nome) {
+        return this.prestadoresRepository.findPrestadorByNome(nome);
+    }
 }
