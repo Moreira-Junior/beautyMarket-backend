@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface PrestadoresRepository extends JpaRepository<Prestador, Long> {
 
-    @Query(value = "select p from Prestador p where upper(p.nomeFantasia) like %:nome%")
+    @Query(value = "select distinct p from Prestador p where upper(p.nomeFantasia) like %:nome% or upper(p.especialidade) like %:nome% or upper(p.bairro) like %:nome%")
     List<Prestador> findPrestadorByNome(@Param("nome")String nome);
 }
