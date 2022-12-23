@@ -2,6 +2,7 @@ package br.ifpb.pweb1.beautyMarket.service;
 
 import br.ifpb.pweb1.beautyMarket.model.Prestador;
 import br.ifpb.pweb1.beautyMarket.repository.PrestadoresRepository;
+import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +20,7 @@ public class PrestadorService {
     }
 
     @Transactional
-    public Prestador criarOuAtualizarPrestador(Prestador prestador) {
+    public Prestador criarOuAtualizarPrestador(@NotNull Prestador prestador) {
         return this.prestadoresRepository.save(prestador);
     }
 
